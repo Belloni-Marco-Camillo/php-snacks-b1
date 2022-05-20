@@ -11,11 +11,18 @@
 <?php
 
     $partiteGiocate = [
-        'squadraCasa' => 'gli isotopi',
+        ['squadraCasa' => 'gli isotopi',
         'squadraOspite' => 'raptors',
         'puntiSqCasa' => 65,
         'puntiSqOspite' => 45
-    ];
+    ],
+    [
+        'squadraCasa' => 'prova',
+        'squadraOspite' => 'riprova',
+        'puntiSqCasa' => 45,
+        'puntiSqOspite' => 55
+    ]]
+    ;
 
 ?>
 
@@ -32,11 +39,17 @@
 
 <h1>primo girone</h1>
 
-<h3><?php echo $partiteGiocate["squadraCasa"] ?> - <?php echo $partiteGiocate["squadraOspite"] ?></h3>
-<table>
-    <th><?php echo $partiteGiocate["squadraCasa"] ?></th><th><?php echo $partiteGiocate["squadraOspite"] ?></th>
-    <td><?php echo $partiteGiocate["squadraCasa"] ?></td>
-</table>
+<?php for ($i = 0; $i < count($partiteGiocate); $i++) { ?>
+
+    <table>
+        <th><?php echo $partiteGiocate[$i]["squadraCasa"] ?></th><th><?php echo $partiteGiocate[$i]["squadraOspite"] ?></th>
+        <td><?php echo $partiteGiocate[$i]["puntiSqCasa"] ?></td><td><?php echo $partiteGiocate[$i]["puntiSqOspite"] ?></td>
+    </table>
+   
+<?php } ?>
+
+
+
 
     
 </body>
